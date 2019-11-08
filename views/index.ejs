@@ -1,0 +1,26 @@
+<%- include partials/header.ejs %>
+<%- include partials/navBar.ejs %>
+
+<body>
+        <div class="container">
+                
+
+                <% article.forEach(article =>{%>
+                        <div class="card">
+                               <div class="card-header">
+                                <h3><%= article.title %></h3>
+                               </div> 
+                               <div class="card-body">
+                                   <p><%- article.body %></p>    
+                               </div>
+                               <div class="card-footer">
+                                   <h3><%= article.categoryId %></h3>    
+                               </div>
+
+                        </div><br>
+                <%}) %>
+        </div>
+    
+</body>
+
+<%- include partials/footer.ejs %>
