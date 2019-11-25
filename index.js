@@ -33,7 +33,7 @@ app.get("/", (req, res) => {
         raw: true, order: [
             ['id', 'DESC']//ordenar id decresente
 
-        ]
+        ],limit: 4
     }).then(article => {
         Category.findAll().then(categories => {
             res.render("index.ejs", { article: article, categories: categories });
@@ -81,6 +81,6 @@ app.get("/category/:slug",(req,res)=>{
         res.redirect("/");
     });
 });
-app.listen(8181, () => {
+app.listen(8080, () => {
     console.log("Server Rodando");
 })
